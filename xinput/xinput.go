@@ -36,19 +36,22 @@ func GetPropertiesForDeviceId(deviceId string) ([]string, error) {
 	return props, nil
 }
 
-func IsDeviceEnabled(deviceId string, deviceProperties []string) bool {
+func IsDeviceEnabled(deviceProperties []string) bool {
+	// Set default device is enabled state
 	deviceIsEnabled := false
 	deviceIsEnabledRegExp := regexp.MustCompile(RegexpDeviceEnabled)
 
+	// Attempt to find enabled property state
 	for _, property := range deviceProperties {
 		match := deviceIsEnabledRegExp.FindStringSubmatch(property)
-		if len(match) <= 0 {
-			continue
-		}
 
-		deviceIsEnabled = match[1] == PropertyEnabled
+		if len(match) > 0 {
+			deviceIsEnabled = match[1] == PropertyEnabled
+			break
+		}
 	}
 
+	// Return default enabled state
 	return deviceIsEnabled
 }
 

@@ -28,7 +28,7 @@ func main() {
 		panic(getDevicePropertiesError)
 	}
 
-	deviceIsEnabled := xinput.IsDeviceEnabled(deviceId, deviceProperties)
+	deviceIsEnabled := xinput.IsDeviceEnabled(deviceProperties)
 
 	// Determine state to toggle to
 	toggleToState := xinput.StateEnabled
