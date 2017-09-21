@@ -45,7 +45,7 @@ The command can then be bound to a shortcut key or media key for quick access.
 
 # Installation
 
-Install the binary. See [releases](rels). Please note that `xinput` needs to be
+Install the binary. See [releases][rels]. Please note that `xinput` needs to be
 installed for the command to work.
 
 [rels]: https://github.com/paulchiu/xinput-toggle/releases
