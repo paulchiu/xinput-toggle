@@ -1,0 +1,6 @@
+# .goreleaser.yml
+# Build customization
+builds:
+  - binary: xinput-toggle
+    goos:
+      - linux
